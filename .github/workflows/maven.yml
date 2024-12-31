@@ -53,6 +53,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Docker Image
+      working-directory: demo-java-app
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/demo-java-app:v.2 .
         docker push ${{ secrets.DOCKER_USERNAME }}/demo-java-app:v.2
